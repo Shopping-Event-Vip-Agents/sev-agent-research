@@ -3,8 +3,8 @@ FROM node:22-alpine AS builder
 ARG GITHUB_TOKEN
 
 WORKDIR /app
-COPY package*.json .npmrc ./
-RUN npm ci
+COPY package.json .npmrc ./
+RUN npm install
 COPY tsconfig.json ./
 COPY src/ ./src/
 RUN npm run build
@@ -14,8 +14,8 @@ FROM node:22-alpine
 ARG GITHUB_TOKEN
 
 WORKDIR /app
-COPY package*.json .npmrc ./
-RUN npm ci --omit=dev
+COPY package.json .npmrc ./
+RUN npm install --omit=dev
 # Remove .npmrc from final image (contains token reference)
 RUN rm -f .npmrc
 COPY --from=builder /app/dist ./dist
