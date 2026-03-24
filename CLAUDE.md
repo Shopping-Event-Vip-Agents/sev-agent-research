@@ -60,3 +60,12 @@ Shared packages from `sev-ai-core`:
 - `npm run build` — Build for production
 - `npm run start` — Run built version
 - `npm run test` — Run tests
+
+## GitHub Packages
+
+This agent uses `@domien-sev/*` packages from GitHub Packages.
+- `.npmrc` uses `GH_PKG_TOKEN` env var for auth (NOT `GITHUB_TOKEN` — Coolify overrides that)
+- Dockerfile uses `ARG GH_PKG_TOKEN` for Docker builds
+- In Coolify, `GH_PKG_TOKEN` must be set as an env var
+- See `sev-ai-core/CLAUDE.md` for full GitHub setup details
+
