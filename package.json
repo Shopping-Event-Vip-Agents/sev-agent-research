@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Research agent — web search, data gathering, analysis, and summarization",
+  "description": "Research agent \u00e2\u20ac\u201d web search, data gathering, analysis, and summarization",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -13,10 +13,12 @@
     "lint": "tsc --noEmit"
   },
   "dependencies": {
-    "@domien-sev/agent-sdk": "*",
+    "@directus/sdk": "^18.0.0",
+    "@domien-sev/agent-sdk": ">=0.2.0",
     "@domien-sev/directus-sdk": "*",
     "@domien-sev/shared-types": "*",
-    "@directus/sdk": "^18.0.0"
+    "dotenv": "^8.2.0",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "tsx": "^4.19.0",
